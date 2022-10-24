@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.components">
+            <block class="Magento\Framework\View\Element\Js\Components" name="wishlist_head_components" template="Magento_Wishlist::js/components.phtml"/>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <referenceBlock name="customer.wishlist">
+                <referenceContainer name="customer.wishlist.buttons">
+                    <referenceBlock name="customer.wishlist.button.update"/>
+                    <referenceBlock name="customer.wishlist.button.share" />
+                    <referenceBlock name="customer.wishlist.button.toCart"/>
+                    <block class="Magento\Wishlist\Block\Customer\Wishlist\Button" name="customer.wishlist.button.delete.all" template="Algoritma_WishListCustom::button/delete-all.phtml" cacheable="false"/>
+                </referenceContainer>
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>

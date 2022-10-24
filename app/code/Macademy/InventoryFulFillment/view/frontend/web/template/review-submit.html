@@ -1,0 +1,39 @@
+<div class="review-submit">
+    <h2 data-bind="i18n: 'Review & submit'"></h2>
+    <span data-bind="i18n: 'Please review the box configuration before submitting.'"></span>
+    <table class="review-table">
+        <thead>
+            <tr>
+                <td>
+                    <strong data-bind="i18n: 'Number of boxes'"></strong>
+                </td>
+                <td>
+                    <strong data-bind="i18n: 'Shipment weight'"></strong>
+                </td>
+                <td>
+                    <strong data-bind="i18n: 'Billable weight'"></strong>
+                </td>
+            </tr>
+        </thead>
+        <tbody class="review-table-body">
+            <tr>
+                <td>
+                    <span data-bind="text: numberOfBoxes"></span>
+                </td>
+                <td>
+                    <span data-bind="text: shipmentWeight"></span>
+                    <!-- ko i18n: ' kg.' --><!-- /ko -->
+                </td>
+                <td>
+                    <span data-bind="text: billableWeight"></span>
+                    <!-- ko i18n: ' kg.' --><!-- /ko -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <input type="checkbox" data-bind="checked: termsConditionsCheck" class="required-entry"/>
+        <label data-bind="i18n: 'I agree to the Terms & Conditions.'"></label>
+        <button class="action primary" data-bind="i18n: 'Accept shipping plan', enable: termsConditionsCheck"></button>
+    </div>
+</div>

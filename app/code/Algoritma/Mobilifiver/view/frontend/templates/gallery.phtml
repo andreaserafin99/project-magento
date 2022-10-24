@@ -1,0 +1,86 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Product media data template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Gallery
+ */
+
+use Magento\Catalog\Helper\Image;
+
+?>
+
+<?php
+$largeImageType = '';
+$images = $block->getGalleryImages()->getItems();
+$mainImage = current(array_filter($images, function ($img) use ($block) {
+    return $block->isMainImage($img);
+}));
+$imagesArray = [];
+$imagesArray = $block->getGalleryImages()->getItems();
+
+$helper = $block->getData('imageHelper');
+
+/**
+ * @var $imagePropsProvider Algoritma\Mobilifiver\ViewModel\ImageProperties
+ */
+$imagePropsProvider = $block->getData('imageProps');
+$productId = $block->getProduct()->getData('entity_id');
+
+$mainImageData = $mainImage ?
+    $mainImage->getData('medium_image_url') :
+    $helper->getDefaultPlaceholderUrl('image');
+
+$imageDataArray = [];
+
+
+foreach ($imagesArray as $image){
+    $url = $image ? $image->getData('large_image_url') : $helper->getDefaultPlaceholderUrl('image');
+    $product = $imagePropsProvider->getProductById($productId);
+    $currentHeight = $imagePropsProvider->getImageOriginalHeight($product, '');
+    $currentWidth = $imagePropsProvider->getImageOriginalWidth($product, '');
+
+//    var_dump($currentHeight);
+//    var_dump($currentWidth);
+
+        $imageProperty = $url;
+
+        array_push($imageDataArray, $imageProperty);
+
+}
+?>
+
+<div class="gallery-placeholder _block-content-loading" data-gallery-role="gallery-placeholder">
+
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col-6 background-image" >
+                    <img src="<?= $imageDataArray[0]?>" alt="immagine">
+                </div>
+                <div class="col-6 background-image" >
+                    <img src="<?= $imageDataArray[1]?>" alt="immagine">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 background-image" >
+                    <img src="<?= $imageDataArray[2]?>" alt="immagine">
+                </div>
+                <div class="col-6 background-image" >
+                    <img src="<?= $imageDataArray[3]?>" alt="immagine">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 background-image" >
+                    <img src="<?= $imageDataArray[4]?>" alt="immagine">
+                </div>
+            </div>
+
+<!--            -->
+        </div>
+    </div>
+</div>

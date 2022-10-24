@@ -1,0 +1,9 @@
+<?php
+/** @var \Magento\Wishlist\Block\Customer\Wishlist\Button $block */
+?>
+
+<?php if ($block->getWishlist()->getItemsCount()) : ?>
+    <button type="button" data-role="remove-all" title="<?= $block->escapeHtmlAttr(__('Empty wishlist')) ?>" class="action update">
+        <span><?= $block->escapeHtml(__('Empty wishlist')) ?></span>
+    </button>
+<?php endif;?>

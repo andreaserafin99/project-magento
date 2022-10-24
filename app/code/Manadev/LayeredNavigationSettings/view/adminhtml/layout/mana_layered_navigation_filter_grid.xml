@@ -1,0 +1,13 @@
+<!--
+ @category    Mana
+ @package     Manadev_LayeredNavigationSettings
+ @copyright   Copyright (c) http://www.manadev.com
+ @license     http://www.manadev.com/license  Proprietary License
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <update handle="formkey"/>
+    <update handle="mana_layered_navigation_filter_grid_block"/>
+    <container name="root">
+        <block class="Magento\Backend\Block\Widget\Grid\Container" name="mana.filter.grid.container" template="Magento_Backend::widget/grid/container/empty.phtml"/>
+    </container>
+</layout>

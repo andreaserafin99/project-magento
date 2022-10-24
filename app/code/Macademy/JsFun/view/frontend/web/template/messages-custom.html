@@ -1,0 +1,44 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div data-role="checkout-messages" class=" grid-loading-mask" data-bind="visible: isVisible(), click: removeAll">
+    <!-- ko foreach: messageContainer.getErrorMessages() -->
+    <div class="grid-loader">
+        <div aria-atomic="true" role="alert" class="message  message-error error">
+            <div data-ui-id="checkout-cart-validationmessages-message-error" data-bind="text: $data"></div>
+        </div>
+    </div>
+
+    <!--/ko-->
+    <!-- ko foreach: messageContainer.getSuccessMessages() -->
+    <div aria-atomic="true" role="alert" class="message message-success success">
+        <div data-ui-id="checkout-cart-validationmessages-message-success" data-bind="text: $data"></div>
+    </div>
+    <!--/ko-->
+</div>
+
+
+
+<!--.grid-loading-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 100;
+}
+.grid-loading-mask .grid-loader {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 218px;
+  height: 149px;
+  background: url('../images/loader-2.gif') 50% 50% no-repeat;
+}-->

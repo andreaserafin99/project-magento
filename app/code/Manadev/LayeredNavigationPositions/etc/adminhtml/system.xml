@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!--
+ @category    Mana
+ @package     Manadev_LayeredNavigationPositions
+ @copyright   Copyright (c) http://www.manadev.com
+ @license     http://www.manadev.com/license  Proprietary License
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="mana_layered_navigation">
+            <group id="default_positions" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>By Default Show Filters</label>
+                <field id="in_main_sidebar" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>In Main Sidebar</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="in_additional_sidebar" translate="label" type="select" sortOrder="200" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>In Additional Sidebar</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="above_products" translate="label" type="select" sortOrder="300" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Above Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="show_applied_filter" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Show Applied Filter</label>
+                <field id="show_in_main_sidebar" translate="label" type="select" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>In Main Sidebar</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="show_in_additional_sidebar" translate="label" type="select" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>In Additional Sidebar</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="show_above_products" translate="label" type="select" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Above Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="filter_positioning" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Filter Positioning</label>
+                <field id="above_products_template" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show 'Above Products' Filters As</label>
+                    <source_model>Manadev\LayeredNavigationPositions\Sources\AboveProductTemplateSource</source_model>
+                </field>
+                <field id="above_products_position" translate="label" type="select" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position Of 'Above Products' Filters</label>
+                    <source_model>Manadev\LayeredNavigationPositions\Sources\AboveProductsPosition</source_model>
+                </field>
+                <field id="menu_popup_min_width" translate="label comment" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Menu Popup Min Width</label>
+                    <comment>Value in pixels (only number). Applied to a part with options which drops down.</comment>
+                    <depends>
+                        <field id="above_products_template">Manadev_LayeredNavigationPositions::horizontal/menu.phtml</field>
+                    </depends>
+                </field>
+                <field id="menu_popup_max_width" translate="label comment" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Menu Popup Max Width</label>
+                    <comment>Value in pixels (only number). Applied to a part with options which drops down.</comment>
+                    <depends>
+                        <field id="above_products_template">Manadev_LayeredNavigationPositions::horizontal/menu.phtml</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

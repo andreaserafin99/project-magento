@@ -1,0 +1,31 @@
+<?php
+/** @var Magento\Framework\View\Element\Template\ $block */
+/** @var Magento\Framework\Escaper $escaper */
+/** @var Macademy/Blog/ViewModel/Post $postVm */
+/** @var Magento\Framework\App\RequestInterface $request */
+
+$postVm = $block->getData('post_vm');
+
+
+$currentId = $postVm->getId();
+?>
+
+<div class="blog-post-sidebar">
+
+    <p><strong><?= __('Other blog post')?></strong></p>
+
+    <ul class="blog-post-list">
+        <?php foreach ($postVm->getList() as $post): ?>
+            <li class="filter-options-content">
+
+                <?php if($post->getData('id') == $currentId) { ?>
+                <strong><?= $escaper->escapeHtml($post->getData('title')) ?></strong>
+                <?php } else { ?>
+                <a href="<?= $block->getUrl('blog/post/detail', ['id' => $post->getData('id')]) ?>">
+                    <?= $escaper->escapeHtml($post->getData('title')) ?>
+                </a>
+                <?php } ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

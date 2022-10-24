@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+ @category    Mana
+ @package     Manadev_LayeredNavigationPositions
+ @copyright   Copyright (c) http://www.manadev.com
+ @license     http://www.manadev.com/license  Proprietary License
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <manadev_features>
+            <Manadev_LayeredNavigationPositions>
+                <version>19.10.2512</version>
+                <code>horizontal-layered-navigation-positioning-magento2</code>
+                <title>Horizontal Layered Navigation (Positioning)</title>
+                <sort_order>500</sort_order>
+            </Manadev_LayeredNavigationPositions>
+            <Manadev_LayeredNavigation>
+                <removed_by_Manadev_LayeredNavigationPositions />
+            </Manadev_LayeredNavigation>
+        </manadev_features>
+        <mana_layered_navigation>
+            <show_applied_filter>
+                <show_above_products>1</show_above_products>
+            </show_applied_filter>
+            <filter_positioning>
+                <above_products_template>Manadev_LayeredNavigationPositions::horizontal/view.phtml</above_products_template>
+                <above_products_position>above_products</above_products_position>
+                <menu_popup_min_width>180</menu_popup_min_width>
+                <menu_popup_max_width>250</menu_popup_max_width>
+            </filter_positioning>
+        </mana_layered_navigation>
+    </default>
+</config>

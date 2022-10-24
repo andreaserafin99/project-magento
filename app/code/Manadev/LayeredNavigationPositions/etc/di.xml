@@ -1,0 +1,18 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Manadev\LayeredNavigationSettings\Blocks\Adminhtml\FilterForm">
+        <plugin name="Manadev\LayeredNavigationPositions" type="Manadev\LayeredNavigationPositions\Plugins\FilterForm" sortOrder="200" />
+    </type>
+
+    <type name="Manadev\LayeredNavigation\Blocks\Navigation">
+        <plugin name="Manadev\LayeredNavigationPositions" type="Manadev\LayeredNavigationPositions\Plugins\NavigationBlock" sortOrder="100"/>
+    </type>
+
+    <type name="Manadev\LayeredNavigationPositions\Sources\AboveProductTemplateSource">
+        <arguments>
+            <argument name="aboveProductTemplates" xsi:type="array">
+                <item name="Manadev_LayeredNavigationPositions::horizontal/view.phtml" xsi:type="string">Horizontal Laid Filters</item>
+                <item name="Manadev_LayeredNavigationPositions::horizontal/menu.phtml" xsi:type="string">Drop Down Menu</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

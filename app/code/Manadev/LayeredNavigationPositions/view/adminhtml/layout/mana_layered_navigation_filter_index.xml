@@ -1,0 +1,11 @@
+<!--
+ @category    Mana
+ @package     Manadev_LayeredNavigationPositions
+ @copyright   Copyright (c) http://www.manadev.com
+ @license     http://www.manadev.com/license  Proprietary License
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Manadev_LayeredNavigationPositions::css/styles.css"/>
+    </head>
+</page>

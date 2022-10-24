@@ -1,0 +1,12 @@
+<!--
+ @category    Mana
+ @package     Manadev_LayeredNavigationPositions
+ @copyright   Copyright (c) http://www.manadev.com
+ @license     http://www.manadev.com/license  Proprietary License
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\AbstractBlock">
+        <plugin name="Manadev\LayeredNavigationPositions\Plugins\AbstractBlockPlugin"
+            type="Manadev\LayeredNavigationPositions\Plugins\AbstractBlockPlugin" sortOrder="100"/>
+    </type>
+</config>

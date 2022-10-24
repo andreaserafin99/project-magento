@@ -1,0 +1,57 @@
+.sku-lookup{
+    .form{
+        display: flex;
+        align-items: center;
+        margin: 40px 0;
+        position: relative;
+        input{
+            height: 48px;
+            margin-right: 20px;
+        }
+        .message{
+            position: absolute;
+            bottom: -20px;
+            left: 10px;
+        }
+    }
+}
+.box-configurations{
+    table{
+
+        margin: 40px 0;
+        input{
+            width: 150px;
+        }
+
+        .delete {
+            display: block;
+            padding-top: 5px;
+            cursor: pointer;
+            color: #b40404;
+        }
+        td {
+            position: relative;
+        }
+        input[aria-invalid="true"]{
+            border: 1px solid #b40404;
+        }
+        label.error{
+            position: absolute;
+            width: 100%;
+            display: block;
+            margin-top: 3px;
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            font-weight: 400;
+            color: #b40404;
+        }
+        button.primary{
+            margin-left: 6px;
+        }
+    }
+
+}
+
+.review-table{
+    width: 500px;
+}

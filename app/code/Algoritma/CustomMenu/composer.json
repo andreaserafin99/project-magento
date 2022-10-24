@@ -1,0 +1,21 @@
+{
+  "name": "algoritma/module-custom-menu",
+  "version": "1.0.0",
+  "description": "N/A",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "magento/module-theme": "101.1.*"
+  },
+  "license": [
+    "Open Software License (OSL)"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Algoritma\\CustomMenu\\": ""
+    }
+  }
+}

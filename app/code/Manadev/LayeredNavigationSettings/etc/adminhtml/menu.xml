@@ -1,0 +1,21 @@
+<!--
+ @category    Mana
+ @package     Manadev_LayeredNavigationSettings
+ @copyright   Copyright (c) http://www.manadev.com
+ @license     http://www.manadev.com/license  Proprietary License
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../app/code/Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Manadev_LayeredNavigationSettings::layered_navigation" title="Layered Navigation" module="Manadev_LayeredNavigationSettings" sortOrder="200"
+            parent="Manadev_Core::manadev" dependsOnModule="Manadev_LayeredNavigationSettings"
+            resource="Manadev_LayeredNavigationSettings::filter_settings"/>
+
+        <add id="Manadev_LayeredNavigationSettings::global_configuration" title="Global Configuration" module="Manadev_LayeredNavigationSettings"
+            sortOrder="100" resource="Manadev_LayeredNavigationSettings::global_configuration" parent="Manadev_LayeredNavigationSettings::layered_navigation"
+            action="adminhtml/system_config/edit/section/mana_layered_navigation"/>
+
+        <add id="Manadev_LayeredNavigationSettings::filter_settings" title="Filter Settings" module="Manadev_LayeredNavigationSettings"
+            sortOrder="200" resource="Manadev_LayeredNavigationSettings::filter_settings" parent="Manadev_LayeredNavigationSettings::layered_navigation"
+            action="mana_layered_navigation/filter/"/>
+    </menu>
+</config>

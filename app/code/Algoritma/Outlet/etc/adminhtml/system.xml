@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="outlet_section" sortOrder="999" translate="label">
+            <label>Outlet</label>
+        </tab>
+        <section id="outlet" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="0" >
+            <label>Categories</label>
+            <tab>outlet_section</tab>
+            <resource>Algoritma_Outlet::config_algoritma_outlet</resource>
+            <group id="excluded_categories" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="0">
+                <label>Excluded Categories</label>
+
+                <field id="excluded_categories_input" type="text" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="0">
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

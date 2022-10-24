@@ -1,0 +1,62 @@
+<?php
+/**
+ * @copyright   Copyright (c) http://www.manadev.com
+ * @license     http://www.manadev.com/license  Proprietary License
+ */
+/**
+ * @var $block \Manadev\LayeredNavigation\Blocks\Navigation
+ *
+ * Based on app/code/Magento/LayeredNavigation/view/frontend/templates/layer/view.phtml (diff to check
+ * what has changed).
+ */
+?>
+
+<?php if ($block->isVisible()): ?>
+    <div class="mana-filter-block mana-filter-block-above-menu" data-mage-init='{ "Manadev_LayeredNavigation/js/NavigationView": {} }'>
+        <?php if ($block->hasState() && $block->isAppliedFilterVisible()) : ?>
+            <div class="filter-current">
+                <strong class="block-subtitle filter-current-subtitle" role="heading" aria-level="2" data-count="<?php echo $block->getAppliedOptionCount() ?>"><?php echo __('Now Shopping by') ?></strong>
+                <ol class="items">
+                    <?php foreach ($block->getAppliedFilters() as $engineFilter): ?>
+                        <?php foreach ($engineFilter->getAppliedItems() as $item) : ?>
+                            <li class="item"><?php echo $block->renderAppliedItem($engineFilter, $item) ?></li>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </ol>
+            </div>
+
+            <div class="block-actions filter-actions">
+                <a href="<?php echo $block->getClearUrl() ?>"<?php echo $block->getClearLinkAttributes() ?> class="action clear filter-clear"><span><?php echo __('Clear All') ?></span></a>
+            </div>
+        <?php endif; ?>
+
+        <strong><?php echo __('Shopping Options') ?></strong>
+        <?php $noFilters = true; ?>
+
+        <div class="filter-options">
+            <?php echo $block->getApplyHtml() ?>
+            <?php foreach ($block->getFilters() as $filter): ?>
+                <?php $noFilters = false; ?>
+                <div class="filter-options-item">
+                    <div class="filter-options-title"><?php echo __($filter->getName()) ?></div>
+                    <div class="filter-options-content"><?php echo $block->renderFilter($filter); ?></div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <script type="text/javascript">
+        <?php
+        $scripts = ['jquery'];
+        foreach ($block->getScripts() as $element => $script) {
+            $scripts = array_merge($scripts, array_keys($script));
+        }
+        ?>
+        require(<?php echo json_encode($scripts) ?>, function ($) {
+            $(function() {
+                <?php foreach($block->getScripts() as $element => $script): ?>
+                    $("<?php echo $element?>").<?php echo key($script)?>(<?php echo json_encode($script[key($script)], JSON_PRETTY_PRINT) ?>);
+                <?php endforeach; ?>
+            });
+        });
+    </script>
+<?php endif; ?>

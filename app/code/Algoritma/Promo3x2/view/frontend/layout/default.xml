@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- Reference the parent with referenceContainer or referenceBlock -->
+        <referenceContainer name="header.container">
+            <!-- This is a standard block with a reference to our template -->
+            <block name="promo.banner" template="Algoritma_Promo3x2::promo3x2.phtml" before="-">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="promo3x2" xsi:type="array">
+                                <item name="component" xsi:type="string">Algoritma_Promo3x2/js/promo3x2</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

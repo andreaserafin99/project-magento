@@ -1,0 +1,196 @@
+<?php
+/** @var Magento\Framework\View\Element\Template\ $block */
+/** @var Macademy\Minerva\Block\Faq\ListAction $dataProv */
+/** @var Macademy\Minerva\ViewModel\CheckAuth $authentication */
+$dataProv = $block->getData('data_provider');
+$authentication = $block->getData('user_status');
+?>
+<div class="faq-title-container">
+    <strong class="faq-title">FAQs</strong>
+</div>
+<div class="legend-container">
+    <div class="legend-published-container">
+        <div class="legend-box-color"></div>
+        <div class="legend-text-container">
+            <span class="legend-box-text">Published</span>
+            <span class="legend-box-description">All customers and adrministrators can see this question</span>
+        </div>
+    </div>
+
+    <div class="legend-unpublished-container">
+        <div class="legend-box-color"></div>
+        <div class="legend-text-container">
+            <span class="legend-box-text">Unpublished</span>
+            <span class="legend-box-description">Only you and administrators can see this question</span>
+        </div>
+    </div>
+</div>
+<div class="faq-container">
+
+    <?php
+        $list = $dataProv->getDataList();
+        foreach ($list as $question) { ?>
+
+            <div class="faq-item">
+                <div class="faq-question <?php
+                    if (!$question->getData('is_published')) {
+                        echo 'invisible';
+                    }
+                ?>">
+                    <p>
+                        <span>
+                            <i><strong><?= $authentication->getCustomerById($question->getData('customer')); ?>: </strong></i>
+                        </span>
+                        <strong>
+                            <span class="label-qa"></span> <?= $question->getData('question') ?>
+                        </strong>
+                    </p>
+                    <strong class="date"> <?= $question->getData('created_at') ?> </strong>
+                </div>
+                <div  class="faq-answer">
+                    <p>
+                        <span>
+                            <i><strong>Admin: </strong></i>
+                        </span>
+                        <span class="label-qa"></span> <?= $question->getData('answer') ?>
+                    </p>
+                    <strong class="date"> <?= $question->getData('updated_at') ?> </strong>
+                </div>
+            </div>
+
+    <?php
+        }
+    ?>
+</div>
+<div class="form-container">
+        <strong class="faq-title-2">Add a new question!</strong>
+        <p class="faq-subtitle">Our developers will decide whether to publish it or not</p>
+
+    <?php
+        if (!$authentication->getUserInfo()) {
+            ?>
+    <div class="new-question-container">
+        <strong>Sign in to insert a new question!</strong>
+    </div>
+
+    <?php
+        } else { ?>
+    <form method="post" action="<?php echo $this->getUrl('minerva/faq/save'); ?>">
+        <div class="new-question-container">
+            <label for="question" class="new-faq-label">
+                <input type="text" name="question" class="new-faq-input" placeholder="Question" />
+            </label>
+            <button type="submit">CONFIRM</button>
+        </div>
+    </form>
+    <?php } ?>
+</div>
+
+
+
+<style>
+    .legend-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+    .legend-published-container, .legend-unpublished-container{
+        display: flex;
+    }
+    .legend-published-container > .legend-box-color{
+        background-color: rgba(255, 84, 0, 0.5);
+    }
+    .legend-unpublished-container > .legend-box-color{
+        background-color: rgba(0, 0, 0, 0.5)!important;
+    }
+    .legend-box-color{
+        margin: 10px;
+        width: 15px;
+        height: 15px;
+    }
+    .legend-text-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .legend-box-text{
+        margin: 10px 10px 0 0;
+    }
+    .legend-box-description{
+        font-size: 12px;
+        color: rgba(47, 47, 47, 0.45);
+    }
+    .faq-container{
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #ff54009c;
+        border-radius: 0 100px;
+    }
+
+    .faq-container .faq-item{
+        margin: 20px 0;
+    }
+    .faq-item .faq-question{
+        width: 100%;
+        padding: 25px;
+        background-color: rgba(255, 84, 0, 0.5);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .invisible{
+        background-color: rgba(0, 0, 0, 0.5)!important;
+    }
+    .faq-answer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .faq-answer > p{
+        margin: 20px 0;
+    }
+    .faq-item .faq-answer{
+        padding-left: 50px;
+    }
+
+    .date{
+        margin-right: 80px;
+    }
+
+    .label-qa{
+        font-weight: 900;
+        font-size: 16px;
+        margin-right: 15px;
+    }
+    .faq-title-container, .form-container{
+         margin: 35px;
+     }
+    .faq-title{
+        color: rgb(255, 84, 0);
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .faq-title-2{
+        color: rgb(255, 84, 0);
+        font-size: 20px;
+    }
+    .faq-subtitle{
+        color: rgba(47, 47, 47, 0.45);
+    }
+
+    .new-question-container{
+        display: flex;
+        height: 50px;
+        justify-content: space-around;
+    }
+    .new-faq-label{
+        height: 100%;
+        width: 80%;
+    }
+    .new-faq-input{
+        height: 100%!important;
+    }
+</style>

@@ -1,0 +1,15 @@
+/**
+ * @copyright   Copyright (c) http://www.manadev.com
+ * @license     http://www.manadev.com/license  Proprietary License
+ */
+#mana_filter_grid_table .col-show_in_main_sidebar {
+    width: 50px;
+}
+
+#mana_filter_grid_table .col-show_in_additional_sidebar {
+    width: 50px;
+}
+
+#mana_filter_grid_table .col-show_above_products {
+    width: 50px;
+}

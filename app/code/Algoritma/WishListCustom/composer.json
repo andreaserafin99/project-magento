@@ -1,0 +1,21 @@
+{
+  "name": "algoritma/module-wish-list-custom",
+  "version": "1.0.0",
+  "description": "N/A",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "magento/module-wishlist": "101.2.*"
+  },
+  "license": [
+    "Open Software License (OSL)"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Algoritma\\WishListCustom\\": ""
+    }
+  }
+}

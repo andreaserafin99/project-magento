@@ -1,0 +1,45 @@
+<!--
+ @category    Mana
+ @package     Manadev_LayeredNavigationPositions
+ @copyright   Copyright (c) http://www.manadev.com
+ @license     http://www.manadev.com/license  Proprietary License
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="mana.filter.grid.columnSet">
+            <block class="Magento\Backend\Block\Widget\Grid\Column" as="show_in_main_sidebar">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Main</argument>
+                    <argument name="index" xsi:type="string">show_in_main_sidebar</argument>
+                    <argument name="type" xsi:type="string">options</argument>
+                    <argument name="options" xsi:type="options" model="Manadev\Core\Sources\YesNoSource"/>
+                    <argument name="column_css_class" xsi:type="string">col-show_in_main_sidebar</argument>
+                    <argument name="header_css_class" xsi:type="string">col-show_in_main_sidebar</argument>
+                    <argument name="module_name" xsi:type="string">Manadev_LayeredNavigationPositions</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" as="show_in_additional_sidebar">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Additional</argument>
+                    <argument name="index" xsi:type="string">show_in_additional_sidebar</argument>
+                    <argument name="type" xsi:type="string">options</argument>
+                    <argument name="options" xsi:type="options" model="Manadev\Core\Sources\YesNoSource"/>
+                    <argument name="column_css_class" xsi:type="string">col-show_in_additional_sidebar</argument>
+                    <argument name="header_css_class" xsi:type="string">col-show_in_additional_sidebar</argument>
+                    <argument name="module_name" xsi:type="string">Manadev_LayeredNavigationPositions</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" as="show_above_products" name="show_above_products_column">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Above</argument>
+                    <argument name="index" xsi:type="string">show_above_products</argument>
+                    <argument name="type" xsi:type="string">options</argument>
+                    <argument name="options" xsi:type="options" model="Manadev\Core\Sources\YesNoSource"/>
+                    <argument name="column_css_class" xsi:type="string">col-show_above_products</argument>
+                    <argument name="header_css_class" xsi:type="string">col-show_above_products</argument>
+                    <argument name="module_name" xsi:type="string">Manadev_LayeredNavigationPositions</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+ @category    Mana
+ @package     Manadev_LayeredNavigationPositions
+ @copyright   Copyright (c) http://www.manadev.com
+ @license     http://www.manadev.com/license  Proprietary License
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.additional">
+            <block class="Manadev\LayeredNavigation\Blocks\Navigation" name="additional.mana.layered_nav" before="-" template="Manadev_LayeredNavigation::navigation.phtml">
+                <arguments>
+                    <argument name="position" xsi:type="string">show_in_additional_sidebar</argument>
+                    <argument name="css_prefix" xsi:type="string">additional</argument>
+                </arguments>
+                <block class="Manadev\LayeredNavigation\Blocks\FilterRenderer" name="additional.mana.layered_nav.filter_renderer" as="filter_renderer"/>
+                <block class="Manadev\LayeredNavigation\Blocks\AppliedItemRenderer" name="additional.mana.layered_nav.applied_item_renderer" as="applied_item_renderer"/>
+            </block>
+        </referenceContainer>
+        <block class="Manadev\LayeredNavigation\Blocks\Navigation" name="above_products.mana.layered_nav" before="-" template="Manadev_LayeredNavigation::navigation.phtml">
+            <arguments>
+                <argument name="position" xsi:type="string">show_above_products</argument>
+                <argument name="css_prefix" xsi:type="string">top</argument>
+            </arguments>
+            <block class="Manadev\LayeredNavigation\Blocks\FilterRenderer" name="above_products.mana.layered_nav.filter_renderer" as="filter_renderer"/>
+            <block class="Manadev\LayeredNavigation\Blocks\AppliedItemRenderer" name="above_products.mana.layered_nav.applied_item_renderer" as="applied_item_renderer"/>
+        </block>
+    </body>
+</page>

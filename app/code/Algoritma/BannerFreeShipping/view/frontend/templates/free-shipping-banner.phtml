@@ -1,0 +1,18 @@
+<?php
+    /* @var $block Magento\Framework\View\Element\Template */
+?>
+
+<div id="free-shipping-banner" class="banner-container" data-bind="scope: 'free-shipping-banner'">
+    <span class="banner-text">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </span>
+</div>
+
+
+<script type="text/x-magento-init">
+    {
+        "#free-shipping-banner": {
+            "Magento_Ui/js/core/app":<?= $block->getJsLayout() ?>
+        }
+    }
+</script>

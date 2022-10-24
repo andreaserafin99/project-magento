@@ -1,0 +1,17 @@
+<?php
+/** @var Magento\Framework\Escaper $escaper */
+/* @var $block Magento\Framework\View\Element\Template */
+?>
+
+<div id="promo3x2" class="promo-banner" data-bind="scope: 'promo3x2'">
+    <span>
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </span>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#promo3x2": {
+            "Magento_Ui/js/core/app":<?= $block->getJsLayout() ?>
+        }
+    }
+</script>

@@ -1,0 +1,9 @@
+<?php
+/** @var $block \Manadev\LayeredNavigationSettings\Blocks\Adminhtml\Scripts */
+/** @var $data array */
+?>
+<?php if($block->getScripts()): ?>
+<script type="text/x-magento-init">
+    <?php echo $block->renderScripts(); ?>
+</script>
+<?php endif; ?>

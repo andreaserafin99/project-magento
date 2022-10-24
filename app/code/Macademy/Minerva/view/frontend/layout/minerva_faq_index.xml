@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block name="faq.content" template="Macademy_Minerva::faq-body-page.phtml">
+                <arguments>
+                    <argument name="data_provider" xsi:type="object">Macademy\Minerva\Block\Faq\ListAction</argument>
+                    <argument name="user_status" xsi:type="object">Macademy\Minerva\ViewModel\CheckAuth</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
+

@@ -1,0 +1,159 @@
+.mana-filter-block-above-horizontal .filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.mana-filter-block-above-horizontal .filter-options-item {
+  padding: 0 20px;
+  flex-basis: 200px;
+  width: 20%;
+  border-bottom: 0; /* Remove the border set on Magento Luma */
+}
+
+.mana-filter-block-above-horizontal .filter-options-content .item {
+  margin: 0;
+}
+
+.mana-filter-block-above-horizontal .filter-options-title {
+  padding: 10px 40px 0 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: auto;
+}
+
+.mana-filter-block-above-horizontal .filter-options-title:after {
+  content: '';
+}
+
+.mana-filter-block-above-menu .filter-options {
+  margin: 10px auto;
+  position: relative;
+}
+
+.mana-filter-block-above-menu .filter-options-item {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 0; /* Remove the border set on Magento Luma */
+  position: relative;
+}
+
+.mana-filter-block-above-menu .filter-options-item.mana-inline-slider {
+  cursor: inherit;
+  padding: 0;
+}
+
+.mana-filter-block-above-menu .mana-inline-slider .filter-options-title {
+  background: none;
+  padding: 0;
+  cursor: inherit;
+  display: inline-block;
+}
+
+.mana-filter-block-above-menu .mana-inline-slider .m-slider {
+  display: inline-flex;
+  padding: 0;
+}
+
+.mana-filter-block-above-menu .mana-inline-slider .mana-filter-slider {
+  width: 130px;
+  min-width: 130px;
+}
+
+.mana-filter-block-above-menu .mana-inline-slider .mana-slider-values {
+  margin-top: 0;
+  margin-left: 5px;
+  top: 8px;
+  position: relative;
+}
+
+.mana-filter-block-above-menu .mana-inline-slider .mana-slider-values.mana-slider-with-range {
+  top: 0;
+}
+
+.mana-filter-block-above-menu .mana-inline-slider .mana-slider-values.mana-slider-range-only {
+  top: -5px;
+}
+
+.mana-filter-block-above-menu .mana-inline-slider .mana-slider-values {
+  margin-top: 0;
+  margin-left: 5px;
+}
+
+.mana-filter-block-above-menu .mana-inline-slider .mana-slider-min-value, .mana-filter-block-above-menu .mana-inline-slider .mana-slider-max-value {
+  display: none;
+}
+
+.mana-filter-block-above-menu .mana-inline-slider .filter-options-content {
+  display: inline-block;
+  height: 20px;
+}
+
+.mana-filter-block-above-menu .filter-options-item.hover {
+  background: #DEE5E8;
+}
+
+.mana-filter-block-above-menu .filter-options-title {
+  background: url('@{manadevPath}../Manadev_LayeredNavigationPositions/images/i-dropdown.gif') 5px 10px no-repeat;
+  /* Reset CSS values that are set in Magento Luma */
+  border-bottom: 0;
+  padding: 0 0 0 20px;
+}
+
+.mana-filter-block-above-menu .filter-options-title:after {
+  /* Reset CSS values that are set in Magento Luma */
+  content: '';
+}
+
+.mana-filter-block-above-menu .filter-options-item:first-child {
+  margin-left: 0;
+}
+
+.mana-filter-block-above-menu .filter-options-content {
+  display: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.mana-filter-block-above-menu .filter-options-item.hover .filter-options-content {
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  background: #f0f0f0;
+  top: 40px;
+  margin-left: -10px;
+  max-width: 200px;
+  border: solid 1px #cccccc;
+}
+
+.mana-filter-block-above-menu .filter-options-content .item {
+  margin: 0 auto;
+  padding: 5px;
+}
+
+// currently shopping by
+
+.mana-filter-block-above-horizontal, .mana-filter-block-above-menu {
+  .filter-current {
+    .items {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 0;
+    }
+
+    .item {
+      padding-left: 8px;
+    }
+
+    .action.remove {
+      position: static;
+    }
+  }
+
+  .filter-actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
